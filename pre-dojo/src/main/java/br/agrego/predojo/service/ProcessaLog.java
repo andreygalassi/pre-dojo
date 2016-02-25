@@ -8,18 +8,26 @@ import br.agrego.predojo.model.Partida;
 import br.agrego.predojo.model.Placar;
 import br.agrego.predojo.util.TradutorUtil;
 
+/**
+ * Destinado ao processamento do arquivo de log.
+ * @author usuario
+ *
+ */
 public class ProcessaLog {
+
+	private final Partida	partida;
 
 	public ProcessaLog(InputStream imputStream) {
 //		InputStream in = getClass().getClassLoader().getResourceAsStream(arquivo);
 		
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(imputStream)
-        	.useDelimiter("\\r\\n|\\n");
+        	.useDelimiter("\\r\\n|\\n|$");
 		
-		Partida partida = new Partida();
-		
-		for (String registro = ""; sc.hasNext(); registro=sc.next()) {
+		partida = new Partida();
+
+		while (sc.hasNext()) {
+			String registro = sc.next();
 			if (registro!=null) {
 				
 				if (registro.contains("has started")) {
@@ -62,12 +70,14 @@ public class ProcessaLog {
 					
 				}else if(registro.contains("using")) {
 					
-				}else if(registro.contains("has ended")) {
-					
 				}
 			}
 		}
 		
+	}
+
+	public Partida getPartida() {
+		return partida;
 	}
 	
 }
