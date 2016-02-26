@@ -12,6 +12,9 @@ public class Placar {
 	private int mortes;
 	private int assassinatos;
 	
+	public Placar(Jogador jogador) {
+		this.jogador = jogador;
+	}
 	public int getMortes() {
 		return mortes;
 	}
@@ -36,6 +39,11 @@ public class Placar {
 	}
 	public void incrementaAssassinatos() {
 		assassinatos++;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("Jogador %10s: Assassinatos: %-5s Mortes: %-5s ", jogador.getNome(),assassinatos,mortes);
 	}
 	
 }
