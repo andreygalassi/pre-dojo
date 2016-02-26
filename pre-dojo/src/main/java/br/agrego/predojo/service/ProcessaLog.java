@@ -38,7 +38,7 @@ public class ProcessaLog {
 				}else if(registro.contains("<WORLD>")) {
 					Jogador jMorto = TradutorUtil.getJogadorMortoPeloMundo(registro);
 					
-					Placar placar = new Placar();
+					Placar placar = new Placar(jMorto);
 					if (partida.getRank().containsKey(jMorto)) {
 						placar = partida.getRank().get(jMorto);
 					}else {
@@ -52,7 +52,7 @@ public class ProcessaLog {
 					Jogador jMorto = TradutorUtil.getJogadorMorto(registro);
 //					Arma arma = TradutorUtil.getArma(registro);
 					
-					Placar pAssassino = new Placar();
+					Placar pAssassino = new Placar(jAssassino);
 					if (partida.getRank().containsKey(jAssassino)) {
 						pAssassino = partida.getRank().get(jAssassino);
 					}else {
@@ -60,7 +60,7 @@ public class ProcessaLog {
 					}
 					pAssassino.incrementaAssassinatos();
 					
-					Placar pMorto = new Placar();
+					Placar pMorto = new Placar(jMorto);
 					if (partida.getRank().containsKey(jMorto)) {
 						pMorto = partida.getRank().get(jMorto);
 					}else {
