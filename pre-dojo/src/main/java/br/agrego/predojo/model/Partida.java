@@ -47,7 +47,7 @@ public class Partida {
 		return rank;
 	}
 
-	public void imprimeRank() {
+	public String imprimeRank() {
 		List<Placar> lista = new ArrayList<Placar>(rank.values());
 		
 		Collections.sort(lista, new Comparator<Placar>() {
@@ -59,8 +59,11 @@ public class Partida {
 				return 0;
 			}});
 		
+		StringBuilder sb = new StringBuilder();
 		for (Placar placar : lista) {
-			System.out.println(placar);
+			sb.append(placar);
+			sb.append("\n");
 		}
+		return sb.toString();
 	}
 }

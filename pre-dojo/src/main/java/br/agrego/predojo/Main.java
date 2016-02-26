@@ -18,7 +18,7 @@ public class Main {
 			in = new FileInputStream(file);
 			Partida partida = new ProcessaLog(in).getPartida();
 			
-			partida.imprimeRank();
+			System.out.println(partida.imprimeRank());
 			
 		} catch (FileNotFoundException e) {
 			System.out.println("Erro ao ler o arquivo.");
