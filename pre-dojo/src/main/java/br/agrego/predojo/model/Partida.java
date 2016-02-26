@@ -4,6 +4,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Especifica uma partida, cada log processado gera uma partida com inicio, fim e o rank dos jogadores
+ * @author Andrey Galassi
+ *
+ */
 public class Partida {
 
 	private String codigo;

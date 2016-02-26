@@ -1,5 +1,11 @@
 package br.agrego.predojo.model;
 
+/**
+ * Placar de cada um jogador
+ * Informa a quantidade de assassinatos e mortes do jogador
+ * @author Andrey Galassi
+ *
+ */
 public class Placar {
 
 	private Jogador jogador;

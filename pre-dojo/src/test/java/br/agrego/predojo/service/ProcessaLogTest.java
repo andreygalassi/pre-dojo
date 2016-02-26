@@ -12,6 +12,11 @@ import org.junit.Test;
 import br.agrego.predojo.model.Jogador;
 import br.agrego.predojo.model.Partida;
 
+/**
+ * 
+ * @author Andrey Galassi
+ *
+ */
 public class ProcessaLogTest {
 
 	private Partida	partida;

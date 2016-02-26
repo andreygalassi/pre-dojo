@@ -10,7 +10,7 @@ import br.agrego.predojo.util.TradutorUtil;
 
 /**
  * Destinado ao processamento do arquivo de log.
- * @author usuario
+ * @author Andrey Galassi
  *
  */
 public class ProcessaLog {

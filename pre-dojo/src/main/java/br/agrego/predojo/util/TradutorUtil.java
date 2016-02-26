@@ -8,6 +8,11 @@ import java.util.Scanner;
 import br.agrego.predojo.model.Arma;
 import br.agrego.predojo.model.Jogador;
 
+/**
+ * Classe utilitária destinada a traduzir cada linha do log e criar os devidos objetos
+ * @author Andrey Galassi
+ *
+ */
 public class TradutorUtil {
 	
 	private TradutorUtil() {
