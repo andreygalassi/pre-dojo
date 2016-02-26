@@ -15,7 +15,6 @@ public class ProcessaLog {
 	private final Partida	partida;
 
 	public ProcessaLog(InputStream imputStream) {
-//		InputStream in = getClass().getClassLoader().getResourceAsStream(arquivo);
 		
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(imputStream)
