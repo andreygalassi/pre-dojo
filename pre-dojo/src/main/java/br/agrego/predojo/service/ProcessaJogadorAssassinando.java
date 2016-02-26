@@ -7,27 +7,41 @@ import br.agrego.predojo.util.TradutorUtil;
 
 public class ProcessaJogadorAssassinando implements IProcessa {
 
+	private IProcessa	processa;
+
 	@Override
 	public void processar(Partida partida, String registro) {
-		Jogador jAssassino = TradutorUtil.getJogadorAssassino(registro);
-		Jogador jMorto = TradutorUtil.getJogadorMorto(registro);
+		if(registro.contains("killed")) {
+			
+			Jogador jAssassino = TradutorUtil.getJogadorAssassino(registro);
+			Jogador jMorto = TradutorUtil.getJogadorMorto(registro);
 //		Arma arma = TradutorUtil.getArma(registro);
-		
-		Placar pAssassino = new Placar(jAssassino);
-		if (partida.getRank().containsKey(jAssassino)) {
-			pAssassino = partida.getRank().get(jAssassino);
+			
+			Placar pAssassino = new Placar(jAssassino);
+			if (partida.getRank().containsKey(jAssassino)) {
+				pAssassino = partida.getRank().get(jAssassino);
+			}else {
+				partida.getRank().put(jAssassino, pAssassino);
+			}
+			pAssassino.incrementaAssassinatos();
+			
+			Placar pMorto = new Placar(jMorto);
+			if (partida.getRank().containsKey(jMorto)) {
+				pMorto = partida.getRank().get(jMorto);
+			}else {
+				partida.getRank().put(jMorto, pMorto);
+			}
+			pMorto.incrementaMorte();
 		}else {
-			partida.getRank().put(jAssassino, pAssassino);
+			processa.processar(partida, registro);
 		}
-		pAssassino.incrementaAssassinatos();
+	}
+
+	@Override
+	public void setProximo(IProcessa processa) {
+		this.processa = processa;
+		// TODO Auto-generated method stub
 		
-		Placar pMorto = new Placar(jMorto);
-		if (partida.getRank().containsKey(jMorto)) {
-			pMorto = partida.getRank().get(jMorto);
-		}else {
-			partida.getRank().put(jMorto, pMorto);
-		}
-		pMorto.incrementaMorte();
 	}
 
 }
