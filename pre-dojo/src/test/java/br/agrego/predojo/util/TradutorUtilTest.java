@@ -12,7 +12,7 @@ import org.junit.Test;
 import br.agrego.predojo.model.Arma;
 import br.agrego.predojo.model.Jogador;
 
-public class TradutorTest {
+public class TradutorUtilTest {
 
 	private final static String LOG1 = "23/04/2013 15:34:22 - New match 11348965 has started";
 	private final static String LOG2 = "23/04/2013 15:36:04 - Roman killed Nick using M16";
