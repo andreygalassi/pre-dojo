@@ -1,7 +1,11 @@
 package br.agrego.predojo.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,5 +45,22 @@ public class Partida {
 
 	public Map<Jogador, Placar> getRank() {
 		return rank;
+	}
+
+	public void imprimeRank() {
+		List<Placar> lista = new ArrayList<Placar>(rank.values());
+		
+		Collections.sort(lista, new Comparator<Placar>() {
+
+			@Override
+			public int compare(Placar o1, Placar o2) {
+				if (o1.getAssassinatos() > o2.getAssassinatos()) return -1;
+				if (o1.getAssassinatos() < o2.getAssassinatos()) return 1;
+				return 0;
+			}});
+		
+		for (Placar placar : lista) {
+			System.out.println(placar);
+		}
 	}
 }
