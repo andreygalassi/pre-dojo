@@ -1,2 +1,4 @@
-Coloque aqui suas instruções ou comentários que ache útil/relevantes para possamos ler 
-quando estivermos avaliando a sua solução
+compilar o projeto com o maven usando os goals clean install
+
+executando:
+java -jar <nome do arquivo gerado.jar> <arquivo de log>
