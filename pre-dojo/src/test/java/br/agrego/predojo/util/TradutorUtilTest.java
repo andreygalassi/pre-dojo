@@ -9,7 +9,6 @@ import java.util.GregorianCalendar;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.agrego.predojo.model.Arma;
 import br.agrego.predojo.model.Jogador;
 
 public class TradutorUtilTest {
@@ -48,13 +47,6 @@ public class TradutorUtilTest {
 		Jogador morto = TradutorUtil.getJogadorMorto(LOG2);
 		Jogador jEsperado = new Jogador("Nick");
 		assertEquals(jEsperado, morto);
-	}
-	
-	@Test
-	public void deveIdentificarAArma() {
-		Arma arma = TradutorUtil.getArma(LOG2);
-		Arma aEsperada = new Arma("M16");
-		assertEquals(aEsperada, arma);
 	}
 	
 	@Test

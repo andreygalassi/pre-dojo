@@ -24,7 +24,6 @@ public class ProcessaLog {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(imputStream)
         	.useDelimiter("\\r\\n|\\n|$");
-		
 
 		IProcessa p1 = new ProcessaInicioPartida();
 		IProcessa p2 = new ProcessaFimPartida();

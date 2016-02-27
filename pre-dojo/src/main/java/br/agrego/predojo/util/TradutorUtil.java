@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import br.agrego.predojo.model.Arma;
 import br.agrego.predojo.model.Jogador;
 
 /**
@@ -55,12 +54,6 @@ public class TradutorUtil {
 		dado = dado.substring(dado.indexOf("killed")+"killed".length(), dado.indexOf("using"));
 
 		return new Jogador(dado.trim());
-	}
-	public static Arma getArma(String registro) {
-		String dado = registro.split(" - ")[1];
-		dado = dado.substring(dado.indexOf("using")+"using".length());
-		
-		return new Arma(dado.trim());
 	}
 	public static Boolean getFimDaPartida(String registro) {
 		String dado = registro.split(" - ")[1];

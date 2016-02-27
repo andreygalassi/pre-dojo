@@ -52,7 +52,6 @@ public class Partida {
 		
 		Collections.sort(lista, new Comparator<Placar>() {
 
-			@Override
 			public int compare(Placar o1, Placar o2) {
 				if (o1.getAssassinatos() > o2.getAssassinatos()) return -1;
 				if (o1.getAssassinatos() < o2.getAssassinatos()) return 1;
